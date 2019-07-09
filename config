@@ -1,0 +1,27 @@
+ngx_addon_name=ngx_http_shm_data_structures_module
+
+HEADERS_MORE_SRCS="                                             	            \
+                $ngx_addon_dir/src/ngx_http_shm_data_structures_module.c    	\
+                $ngx_addon_dir/src/ngx_my_tree.c      				            \
+                $ngx_addon_dir/src/ngx_my_hash_table.c		    	            \
+                "
+HEADERS_MORE_DEPS="                                                	            \
+                $ngx_addon_dir/src/ngx_http_shm_data_structures_module.h    	\
+                $ngx_addon_dir/src/ngx_my_tree.h      				            \
+                $ngx_addon_dir/src/ngx_my_hash_table.h		    	            \
+                "
+
+if test -n "$ngx_module_link"; then
+    ngx_module_type=HTTP_AUX_FILTER
+    ngx_module_name=$ngx_addon_name
+    ngx_module_incs=
+    ngx_module_deps="$HEADERS_MORE_DEPS"
+    ngx_module_srcs="$HEADERS_MORE_SRCS"
+    ngx_module_libs=
+
+    . auto/module
+else
+    HTTP_AUX_FILTER_MODULES="$HTTP_AUX_FILTER_MODULES $ngx_addon_name"
+    NGX_ADDON_SRCS="$NGX_ADDON_SRCS $HEADERS_MORE_SRCS"
+    NGX_ADDON_DEPS="$NGX_ADDON_DEPS $HEADERS_MORE_DEPS"
+fi

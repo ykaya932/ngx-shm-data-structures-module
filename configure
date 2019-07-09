@@ -1,0 +1,2 @@
+ ./configure --add-module=/Users/yasinkaya/Documents/Codes/nginx_module/hash_table
+ 
