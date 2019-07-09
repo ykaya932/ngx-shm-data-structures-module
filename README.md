@@ -38,4 +38,4 @@ I have learned many things from [Emiller's Guide](https://www.evanmiller.org/ngi
 
 Also I have got help from [nginx-hello-world-module](https://github.com/perusio/nginx-hello-world-module). It was nice to see a whole module code.
 
-And for data structures and shared memory, I often checked the [developement guide] written by nginx developers.
+And for data structures and shared memory, I often checked the [developement guide](http://nginx.org/en/docs/dev/development_guide.html) written by nginx developers.
